@@ -1,0 +1,100 @@
+nav.mainmenu {
+    margin:20px auto;
+    text-align: center;
+   
+  
+}
+
+nav.mainmenu > ul {
+    display: inline-block;
+    height:100%;
+    
+    border-radius: 5px 0 5px 0;
+    
+}
+nav.mainmenu li {
+    float:left;
+    position: relative;
+
+}
+nav.mainmenu li a {
+    font-size: 2em;
+    display:block;
+    padding:5px 30px; 
+}
+
+nav.mainmenu li.choice1 a {
+    background:#f58c21;
+   
+}
+nav.mainmenu li.choice2 a {
+    background:#4eb8ea;
+}
+nav.mainmenu li.choice3 a {
+    background:#ee4cff;
+}
+nav.mainmenu li.choice4 a {
+    background:#f58c3f;
+}
+nav.mainmenu ul.border_trans li + li a {          /*border_trans类是为了添加透明左边框   */
+    background-clip: padding-box;
+    border-left:3px solid transparent;
+}
+nav.mainmenu ul.border_trans ul li + li a {
+    background-clip: padding-box;
+    border-top:3px solid transparent;
+}
+
+nav.mainmenu li:last-child a {
+    border-bottom-right-radius: 5px;
+}
+nav.mainmenu li:first-child a {
+    border-top-left-radius: 5px;
+}
+nav.mainmenu li ul.radius li a {
+    border-radius: 0;
+}
+nav.mainmenu li ul.radius li:last-child a {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+nav.mainmenu li ul {
+    position: absolute;
+    visibility: hidden;
+    top:100%;
+    left:0;
+    opacity: 0;
+    width:20em;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+nav.mainmenu li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+}
+nav.mainmenu li li {
+    float:none;
+}
+nav.mainmenu li ul ul {
+    position:absolute;
+    left:100%;
+    top:0;
+}
+nav.mainmenu li:hover > a {
+    color:#fff;
+    background:#aaa;
+}
+
+
+@media only screen and (max-width:640px) {                       /*  响应式布局 */
+    nav.mainmenu {
+        margin:10px auto; 
+    }
+    nav.mainmenu li a {
+        font-size: 1em;
+        padding:5px 15px; 
+    }
+
+}
